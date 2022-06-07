@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "",
-    "dev": ""
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
