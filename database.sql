@@ -1,11 +1,13 @@
+DROP DATABASE IF EXISTS db_registros;
+
 CREATE DATABASE db_registros;
 
 USE db_registros;
 
-CREATE TABLE tb_pessoas (
-  cd_pessoa INT,
+CREATE TABLE tb_registros (
+  cd_registro INT,
   nm_pessoa VARCHAR(200) NOT NULL,
   dt_nascimento DATE NOT NULL,
-  CONSTRAINT pk_pessoas
-    PRIMARY KEY(cd_pessoa)
+  CONSTRAINT pk_registros
+    PRIMARY KEY(cd_registro)
 );
