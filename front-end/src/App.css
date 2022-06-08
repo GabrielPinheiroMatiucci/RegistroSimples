@@ -16,10 +16,14 @@
   margin-right: 10px;
 }
 
-.main {
+.records-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.records-main {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: center;
-  text-align: center;
 }
