@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header className="header">
-      <h3>Inserir novo Registro</h3>
+      <h2>Inserir novo Registro</h2>
       <nav className="navbar">
         <label htmlFor="fullName" className="margin-right">
           Nome:&nbsp;
