@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Loading from './Loading';
+import Record from './Record';
 
 function RecordsContainer() {
   const [loading, setLoading] = useState(true);
@@ -20,16 +21,13 @@ function RecordsContainer() {
   function renderRecords() {
     return (
       <>
-        { records.map(( { nm_pessoa: fullName, dt_nascimento: fullDate } ) => {
-          const originalDate = fullDate.split('T')[0];
-          const splitted = originalDate.split('-');
-          const birthDate = `${splitted[2]}/${splitted[1]}/${splitted[0]}`;
-
+        { records.map(( { nm_pessoa: fullName, dt_nascimento: fullDate }, index ) => {
           return (
-            <section>
-              <p>Nome: { fullName } </p>
-              <p>Data de nascimento: { birthDate } </p>
-            </section>
+            <Record
+              fullName={ fullName }
+              fullDate={ fullDate }
+              key={ `${fullName}=${fullDate}-${index}`}
+            />
           );
         }) }
       </>
@@ -37,10 +35,12 @@ function RecordsContainer() {
   }
 
   return (
-    <main className="main">
+    <main className="records-main">
       <h2>Registros</h2>
-      { loading && <Loading /> }
-      { !loading && renderRecords() }
+      <section className="records-section">
+        { loading && <Loading /> }
+        { !loading && renderRecords() }
+      </section>
     </main>
   );
 }
