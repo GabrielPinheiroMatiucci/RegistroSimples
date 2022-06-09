@@ -4,7 +4,7 @@ function Record({ fullName, fullDate }) {
   const birthDate = `${splitted[2]}/${splitted[1]}/${splitted[0]}`;
 
   return (
-    <div>
+    <div className="record-div">
       <p>Nome: { fullName } </p>
       <p>Data de nascimento: { birthDate } </p>
     </div>
