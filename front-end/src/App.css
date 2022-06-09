@@ -1,3 +1,7 @@
+p {
+  font-size: large;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -26,4 +30,12 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+}
+
+.record-div {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 30%;
+  margin-bottom: 4%;
 }
