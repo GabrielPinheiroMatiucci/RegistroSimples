@@ -1,4 +1,4 @@
-## Teste_NGSolutions<br><br>
+## Teste_DGSolutions<br><br>
 
 ### Abra o arquivo **database.sql** no MySQLWorkbench e rode o script de criação do banco de dados.<br><br>
 
