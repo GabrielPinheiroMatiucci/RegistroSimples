@@ -59,4 +59,25 @@ describe('GET /registros', () => {
       expect(response.body).to.be.deep.equal(mockRegistros);
     });
   });
+
+  describe('Quando levanta-se um erro', () => {
+    const errorMessage = { message: 'Internal Server Error' };
+    const error = new Error();
+
+    before(() => {
+      sinon.stub(registrosModel, 'getRegistros')
+        .throws(error);
+    });
+
+    after(() => registrosModel.getRegistros.restore());
+
+    it('Deve devolver o status 500', async () => {
+      const response = await chai
+        .request(app)
+        .get('/registros');
+
+      expect(response).to.have.status(500);
+      expect(response.body).to.be.deep.equal(errorMessage);
+    });
+  });
 });
