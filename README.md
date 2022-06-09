@@ -10,3 +10,4 @@
 
 ### Para iniciar o servidor do front-end abra um terminal e rode o script `npm run front-end` no diretório raiz.<br><br>
 
+### Abra o link http://localhost:3000 no navegador para ver a aplicação funcionando.
