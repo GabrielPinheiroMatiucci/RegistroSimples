@@ -10,4 +10,6 @@
 
 ### Para iniciar o servidor do front-end abra um terminal e rode o script `npm run front-end` no diretório raiz.<br><br>
 
-### Abra o link http://localhost:3000 no navegador para ver a aplicação funcionando.
+### Abra o link http://localhost:3000 no navegador para ver a aplicação funcionando.<br><br>
+
+### Para rodar os testes do back-end rode o script `npm run test:coverage:back` no diretório raiz. O servidor não precisa estar ativo.<br><br>
