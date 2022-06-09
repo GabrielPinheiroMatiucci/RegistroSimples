@@ -1,9 +1,9 @@
 function validateDateFormat({ year, month, day }) {
   if (year.length !== 4) return null;
 
-  if (month.length !== 2) return null;
+  if (month.length !== 2 && month.length !== 1) return null;
 
-  if (day.length !== 2) return null;
+  if (day.length !== 2 && day.length !== 1) return null;
 
   return true;
 }
