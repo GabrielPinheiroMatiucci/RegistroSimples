@@ -1,0 +1,42 @@
+p {
+  font-size: large;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.records-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.records-main {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.record-div {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 30%;
+  margin-bottom: 4%;
+}
