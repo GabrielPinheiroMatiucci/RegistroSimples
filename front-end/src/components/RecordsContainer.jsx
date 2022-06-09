@@ -1,18 +1,29 @@
 import { useState, useEffect } from 'react';
 import Loading from './Loading';
 import Record from './Record';
+import ServidorError from './ServidorError';
 
 function RecordsContainer() {
   const [loading, setLoading] = useState(true);
   const [records, setRecords] = useState([]);
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
     async function fetchRecords() {
-      const response = await fetch('http://127.0.0.1:3001/registros');
-      const json = await response.json();
-
-      setRecords(json);
-      setLoading(!loading);
+      try {
+        const response = await fetch('http://127.0.0.1:3001/registros');
+        if (response.status === 200) {
+          const json = await response.json();
+    
+          setErr(false);
+          setRecords(json);
+          setLoading(false);
+        }        
+      } catch (error) {
+        setErr(true);
+        setLoading(true);
+        console.error(error);
+      }
     }
 
     fetchRecords();
@@ -38,8 +49,9 @@ function RecordsContainer() {
     <main className="records-main">
       <h2>Registros</h2>
       <section className="records-section">
-        { loading && <Loading /> }
-        { !loading && renderRecords() }
+        { loading && !err && <Loading /> }
+        { !loading && !err && renderRecords() }
+        { err && <ServidorError /> }
       </section>
     </main>
   );
