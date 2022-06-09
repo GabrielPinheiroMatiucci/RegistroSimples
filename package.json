@@ -2,6 +2,7 @@
   "scripts": {
     "setup": "cd back-end && npm install && cd ../front-end && npm install",
     "back-end": "cd back-end && npm run start",
-    "front-end": "cd front-end && npm run serve"
+    "front-end": "cd front-end && npm run serve",
+    "test:coverage:back": "cd back-end && npm run test:coverage"
   }
 }
